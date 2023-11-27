@@ -24,11 +24,13 @@ public class Question {
 	@Column(columnDefinition = "TEXT")
 	private String content;
 
+	@ManyToOne
+	private SiteUser author;
+
 	private LocalDateTime createDate;
+
+	private LocalDateTime modifyDate;
 
 	@OneToMany(mappedBy = "question", cascade= CascadeType.REMOVE)
 	private List<Answer> answerList;
-
-	@ManyToOne
-	private SiteUser author;
 }

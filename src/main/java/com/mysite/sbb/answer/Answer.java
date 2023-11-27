@@ -20,11 +20,13 @@ public class Answer {
 	@Column(columnDefinition = "TEXT")
 	private String content;
 
+	@ManyToOne
+	private SiteUser author;
+
 	private LocalDateTime createDate;
+
+	private LocalDateTime modifyDate;
 
 	@ManyToOne
 	private Question question;
-
-	@ManyToOne
-	private SiteUser author;
 }
